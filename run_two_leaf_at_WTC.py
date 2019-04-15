@@ -11,7 +11,7 @@ import math
 import pandas as pd
 
 import constants as c
-import parameters as p
+import parameters_ch01_up as p
 from radiation import calculate_absorbed_radiation
 from two_leaf import Canopy as TwoLeaf
 
@@ -92,15 +92,16 @@ def update_output_hourly(doy, j, An, et, Tcan, apar, lai_leaf, df, footprint,
 
     # Convert from per tree to m-2
     out.An_obs[j] = df.FluxCO2[j] * c.MMOL_2_UMOL / footprint
-    out.E_obs[j] = df.FluxH2O[j] / footprint
+    #out.E_obs[j] = df.FluxH2O[j] / footprint
 
     return out
 
 if __name__ == "__main__":
 
     output_dir = "outputs"
-    fpath = "/Users/mdekauwe/Downloads/"
-    fname = "met_data_gap_fixed.csv"
+    fpath = "/Users/mingkaijiang/Documents/Research/Projects/WCT1_CO2_drawdown/Two_leaf_model/met_data/"
+    #fname = "HFE WTC hourly flux GapFilled ch01.csv"
+    fname = "met_drawdownperiod_ch01.csv"
     fn = os.path.join(fpath, fname)
     df = pd.read_csv(fn)
     #df = df.drop(df.columns[0], axis=1)

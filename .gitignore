@@ -4,3 +4,9 @@ outputs/*
 .Rproj.user
 
 *.Rproj
+*.DS_Store
+
+#ignore all pyc files
+*.pyc
+*.csv
+*.pdf

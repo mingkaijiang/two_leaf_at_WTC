@@ -16,7 +16,7 @@ __author__  = "Martin De Kauwe"
 __version__ = "1.0 (07.12.2018)"
 __email__   = "mdekauwe@gmail.com"
 
-chamber = "C01"
+chamber = "1"
 
 output_dir = "outputs"
 fn = os.path.join(output_dir, "wtc_two_leaf_%s.csv" % (chamber))
