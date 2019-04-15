@@ -20,7 +20,7 @@ __version__ = "1.0 (07.12.2018)"
 __email__   = "mdekauwe@gmail.com"
 
 
-def run_treatment(T, df, p, wind, pressure, Ca, vary_vj=False):
+def run_treatment(T, df, p, vary_vj=False):
 
     days = df.doy
     hod = df.hod
@@ -38,14 +38,14 @@ def run_treatment(T, df, p, wind, pressure, Ca, vary_vj=False):
 
         if vary_vj:
             (An, et, Tcan,
-             apar, lai_leaf) = T.main(df.tair[i], df.par[i], df.vpd[i], wind,
-                                      pressure, Ca, doy, hod, df.lai[i],
+             apar, lai_leaf) = T.main(df.tair[i], df.par[i], df.vpd[i], df.wind[i],
+                                      df.pressure[i], df.Ca[i], doy, hod, df.lai[i],
                                       Vcmax25=df.Vcmax25[i],
                                       Jmax25=df.Jmax25[i])
         else:
             (An, et, Tcan,
-             apar, lai_leaf) = T.main(df.tair[i], df.par[i], df.vpd[i], wind,
-                                      pressure, Ca, doy, hod, df.lai[i],
+             apar, lai_leaf) = T.main(df.tair[i], df.par[i], df.vpd[i], df.wind[i],
+                                      df.pressure[i], df.Ca[i], doy, hod, df.lai[i],
                                       Vcmax25=p.Vcmax25, Jmax25=p.Jmax25)
 
         out = update_output_hourly(doy, i, An, et, Tcan, apar, lai_leaf, df,
@@ -58,7 +58,7 @@ def run_treatment(T, df, p, wind, pressure, Ca, vary_vj=False):
 def setup_output_dataframe(ndays):
 
     zero = np.zeros(ndays)
-    out = pd.DataFrame({'year':zero, 'doy':zero,
+    out = pd.DataFrame({'year':zero, 'doy':zero, 'hod': zero, 'Ca': zero,
                         'An_obs':zero, 'E_obs':zero,
                         'An_can':zero, 'An_sun':zero, 'An_sha':zero,
                         'E_can':zero, 'E_sun':zero, 'E_sha':zero,
@@ -89,9 +89,14 @@ def update_output_hourly(doy, j, An, et, Tcan, apar, lai_leaf, df, footprint,
     out.LAI_can[j] += np.sum(lai_leaf)
     out.LAI_sun[j] += lai_leaf[c.SUNLIT]
     out.LAI_sha[j] += lai_leaf[c.SHADED]
+    out.year[j] = df.year[j]
+    out.doy[j] = df.doy[j]
+    out.hod[j] = df.hod[j]
+    out.Ca[j] = df.Ca[j]
 
     # Convert from per tree to m-2
-    out.An_obs[j] = df.FluxCO2[j] * c.MMOL_2_UMOL / footprint
+    # unit in: umol CO2 m-2 ground s-1
+    out.An_obs[j] = df.FluxCO2[j] / footprint #* c.MMOL_2_UMOL / footprint
     #out.E_obs[j] = df.FluxH2O[j] / footprint
 
     return out
@@ -112,9 +117,9 @@ if __name__ == "__main__":
 
     ##  Fixed met stuff
     #
-    wind = 2.5
-    pressure = 101325.0
-    Ca = 400.0
+    #wind = 2.5
+    #pressure = 101325.0
+    #Ca = 400.0
 
     T = TwoLeaf(p, gs_model="medlyn")
 
@@ -125,7 +130,7 @@ if __name__ == "__main__":
                  (df.Water_treatment == "control") &
                  (df.chamber == chamber)].copy()
 
-        (out) = run_treatment(T, dfx, p, wind, pressure, Ca, vary_vj=False)
+        (out) = run_treatment(T, dfx, p, vary_vj=False)
 
         if not os.path.exists(output_dir):
             os.mkdir(output_dir)
