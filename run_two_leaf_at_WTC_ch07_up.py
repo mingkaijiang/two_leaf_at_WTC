@@ -59,6 +59,7 @@ def setup_output_dataframe(ndays):
 
     zero = np.zeros(ndays)
     out = pd.DataFrame({'year':zero, 'doy':zero, 'hod': zero, 'Ca': zero,
+                        'chamber':zero, 'canopy':zero,
                         'An_obs':zero, 'E_obs':zero,
                         'An_can':zero, 'An_sun':zero, 'An_sha':zero,
                         'E_can':zero, 'E_sun':zero, 'E_sha':zero,
@@ -93,6 +94,8 @@ def update_output_hourly(doy, j, An, et, Tcan, apar, lai_leaf, df, footprint,
     out.doy[j] = df.doy[j]
     out.hod[j] = df.hod[j]
     out.Ca[j] = df.Ca[j]
+    out.chamber[j] = df.chamber[j]
+    out.canopy[j] = df.Canopy[j]
 
     # Convert from per tree to m-2
     # unit in: umol CO2 m-2 ground s-1

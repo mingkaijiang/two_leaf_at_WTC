@@ -18,7 +18,7 @@ refl = np.array([0.1, 0.3])
 Oi = 210.0
 
 # CO2 compensation point - base rate at 25 deg C / 298 K [umol mol-1]
-gamstar25 = 49.76
+gamstar25 = 49.34
 
 # Michaelis-Menten coefficents for carboxylation by Rubisco at
 # 25degC [umol mol-1] or 298 K
@@ -75,14 +75,14 @@ Hdv = 200000.0
 Hdj = 200000.0
 
 # max rate of rubisco activity at 25 deg or 298 K
-Vcmax25 = 92.26
+Vcmax25 = 46.2
 
 # potential rate of electron transport at 25 deg or 298 K
-Jmax25 = 114.42
+Jmax25 = 71.9
 
 # Rspiration rate at the reference temperature 25 deg C or 298 K [deg K]
 
-Rd25 = 0.54
+Rd25 = 0.83
 
 # ratio of respiration at a given temperature divided by respiration
 # at a temperature 10 degrees lower
