@@ -43,6 +43,7 @@ Ear = None # 34000.0
 # Curvature of the light response.
 # See Peltoniemi et al. 2012 Tree Phys, 32, 510-519
 theta_hyperbol = 0.9995
+#theta = 0.85
 
 # Curvature of the light response (-)
 # set to MAESTRA numbers
@@ -57,7 +58,7 @@ absorptance = 1 - refl[0] - tau[0]
 # reflectance and transmittance should change to MAESTRA
 
 #alpha = quantum_yield * absorptance # (Medlyn et al 2002)
-alpha = 0.26
+alpha = 0.24
 # residual stomatal conductance as net assimilation rate reaches zero
 # (mol m-2 s-1)
 g0 = 0.0
@@ -89,13 +90,13 @@ Rd25 = 1.19
 Q10 = 2.0
 
 # activation energy for the parameter [J mol-1]
-Eaj = 23800
+Eaj = 39676.89
 
 # activation energy for the parameter [J mol-1]
-Eav = 59700
+Eav = 82620.87
 
 # entropy factor [J mol-1 K-1)
-deltaSj = 627
+deltaSj = 641.3615
 
 # entropy factor [J mol-1 K-1)
 deltaSv = 634
