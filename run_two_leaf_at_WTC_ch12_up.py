@@ -100,7 +100,7 @@ def update_output_hourly(doy, j, An, et, Tcan, apar, lai_leaf, df, footprint,
     # Convert from per tree to m-2
     # unit in: umol CO2 m-2 ground s-1
     out.An_obs[j] = df.FluxCO2[j] / footprint #* c.MMOL_2_UMOL / footprint
-    #out.E_obs[j] = df.FluxH2O[j] / footprint
+    out.E_obs[j] = df.FluxH2O[j] / footprint
 
     return out
 
