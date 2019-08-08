@@ -79,7 +79,7 @@ Hdj = 200000.0
 Vcmax25 = 59.84
 
 # potential rate of electron transport at 25 deg or 298 K
-Jmax25 = 93.6
+Jmax25 = 93.59
 
 # Rspiration rate at the reference temperature 25 deg C or 298 K [deg K]
 
@@ -131,6 +131,6 @@ kn = 0.001 #DK no extinction of nitrogen through canopy depth
 
 # empirical param related to the leaf angle dist (= 0 for spherical LAD)
 chi = 9.99999978E-03
-\
+
 diameter = 3.25 # chamber
 footprint = np.pi * (diameter / 2.)**2 # to convert from tree to m2

@@ -5,6 +5,7 @@ outputs/*
 
 *.Rproj
 *.DS_Store
+*.Rhoistory
 
 #ignore all pyc files
 *.pyc

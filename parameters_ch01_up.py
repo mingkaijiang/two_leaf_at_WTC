@@ -76,14 +76,13 @@ Hdv = 200000.0
 Hdj = 200000.0
 
 # max rate of rubisco activity at 25 deg or 298 K
-Vcmax25 = 92.26
+Vcmax25 = 118.69
 
 # potential rate of electron transport at 25 deg or 298 K
-Jmax25 = 114.42
+Jmax25 = 141.8
 
 # Rspiration rate at the reference temperature 25 deg C or 298 K [deg K]
-
-Rd25 = 0.54
+Rd25 = 0.77
 
 # ratio of respiration at a given temperature divided by respiration
 # at a temperature 10 degrees lower

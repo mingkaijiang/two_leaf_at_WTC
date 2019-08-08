@@ -18,7 +18,7 @@ refl = np.array([0.1, 0.3])
 Oi = 210.0
 
 # CO2 compensation point - base rate at 25 deg C / 298 K [umol mol-1]
-gamstar25 = 49.9
+gamstar25 = 49.90
 
 # Michaelis-Menten coefficents for carboxylation by Rubisco at
 # 25degC [umol mol-1] or 298 K
@@ -131,6 +131,6 @@ kn = 0.001 #DK no extinction of nitrogen through canopy depth
 
 # empirical param related to the leaf angle dist (= 0 for spherical LAD)
 chi = 9.99999978E-03
-\
+
 diameter = 3.25 # chamber
 footprint = np.pi * (diameter / 2.)**2 # to convert from tree to m2

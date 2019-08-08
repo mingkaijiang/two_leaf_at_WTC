@@ -18,7 +18,7 @@ refl = np.array([0.1, 0.3])
 Oi = 210.0
 
 # CO2 compensation point - base rate at 25 deg C / 298 K [umol mol-1]
-gamstar25 = 49.5
+gamstar25 = 52.48
 
 # Michaelis-Menten coefficents for carboxylation by Rubisco at
 # 25degC [umol mol-1] or 298 K
@@ -76,14 +76,14 @@ Hdv = 200000.0
 Hdj = 200000.0
 
 # max rate of rubisco activity at 25 deg or 298 K
-Vcmax25 = 96.16
+Vcmax25 = 77.29
 
 # potential rate of electron transport at 25 deg or 298 K
-Jmax25 = 111.08
+Jmax25 = 127.46
 
 # Rspiration rate at the reference temperature 25 deg C or 298 K [deg K]
 
-Rd25 = 1.18
+Rd25 = -0.08
 
 # ratio of respiration at a given temperature divided by respiration
 # at a temperature 10 degrees lower
@@ -131,6 +131,6 @@ kn = 0.001 #DK no extinction of nitrogen through canopy depth
 
 # empirical param related to the leaf angle dist (= 0 for spherical LAD)
 chi = 9.99999978E-03
-\
+
 diameter = 3.25 # chamber
 footprint = np.pi * (diameter / 2.)**2 # to convert from tree to m2

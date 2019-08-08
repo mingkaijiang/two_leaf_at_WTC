@@ -83,7 +83,7 @@ Jmax25 = 71.14
 
 # Rspiration rate at the reference temperature 25 deg C or 298 K [deg K]
 
-Rd25 = 1.11
+Rd25 = -1.11
 
 # ratio of respiration at a given temperature divided by respiration
 # at a temperature 10 degrees lower
@@ -131,6 +131,6 @@ kn = 0.001 #DK no extinction of nitrogen through canopy depth
 
 # empirical param related to the leaf angle dist (= 0 for spherical LAD)
 chi = 9.99999978E-03
-\
+
 diameter = 3.25 # chamber
 footprint = np.pi * (diameter / 2.)**2 # to convert from tree to m2
