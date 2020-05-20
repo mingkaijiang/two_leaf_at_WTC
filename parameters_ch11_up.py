@@ -18,7 +18,7 @@ refl = np.array([0.1, 0.3])
 Oi = 210.0
 
 # CO2 compensation point - base rate at 25 deg C / 298 K [umol mol-1]
-gamstar25 = 49.76
+gamstar25 = 47.74
 
 # Michaelis-Menten coefficents for carboxylation by Rubisco at
 # 25degC [umol mol-1] or 298 K
@@ -64,7 +64,7 @@ alpha = 0.24
 g0 = 0.0
 
 # slope of the sensitivity of stomatal conductance to assimilation (mol m-2 s-1)
-g1 = 2.43 # WTC3 estimates.
+g1 = 3.41  # 2.43 # WTC3 estimates.
 
 # the sensitivity of stomatal conductance to D (kPa)
 D0 = 1.5
@@ -76,14 +76,13 @@ Hdv = 200000.0
 Hdj = 200000.0
 
 # max rate of rubisco activity at 25 deg or 298 K
-Vcmax25 = 90.89
+Vcmax25 = 108.71
 
 # potential rate of electron transport at 25 deg or 298 K
-Jmax25 = 118.25
+Jmax25 = 148.86
 
 # Rspiration rate at the reference temperature 25 deg C or 298 K [deg K]
-
-Rd25 = 0.61
+Rd25 = 1.44
 
 # ratio of respiration at a given temperature divided by respiration
 # at a temperature 10 degrees lower
