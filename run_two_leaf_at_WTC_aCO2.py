@@ -11,7 +11,7 @@ import math
 import pandas as pd
 
 import constants as c
-import parameters_ch01_up as p
+import parameters_aCO2 as p
 from radiation import calculate_absorbed_radiation
 from two_leaf import Canopy as TwoLeaf
 
@@ -108,7 +108,6 @@ if __name__ == "__main__":
 
     output_dir = "outputs"
     fpath = "/Users/mingkaijiang/Documents/Research/Projects/WCT1_CO2_drawdown/Two_leaf_model/met_data/"
-    #fname = "HFE WTC hourly flux GapFilled ch01.csv"
     fname = "met_drawdownperiod_ch01.csv"
     fn = os.path.join(fpath, fname)
     df = pd.read_csv(fn)
