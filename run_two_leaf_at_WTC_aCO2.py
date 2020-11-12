@@ -11,7 +11,7 @@ import math
 import pandas as pd
 
 import constants as c
-import parameters_aCO2 as p
+import parameters as p
 from radiation import calculate_absorbed_radiation
 from two_leaf import Canopy as TwoLeaf
 
@@ -60,7 +60,7 @@ def setup_output_dataframe(ndays):
     zero = np.zeros(ndays)
     out = pd.DataFrame({'year':zero, 'doy':zero, 'hod': zero, 'Ca': zero,
                         'chamber':zero, 'canopy':zero,
-                        'An_obs':zero, 'E_obs':zero,
+                        #'An_obs':zero, 'E_obs':zero,
                         'An_can':zero, 'An_sun':zero, 'An_sha':zero,
                         'E_can':zero, 'E_sun':zero, 'E_sha':zero,
                         'T_can':zero, 'T_sun':zero, 'T_sha':zero,
@@ -99,8 +99,8 @@ def update_output_hourly(doy, j, An, et, Tcan, apar, lai_leaf, df, footprint,
 
     # Convert from per tree to m-2
     # unit in: umol CO2 m-2 ground s-1
-    out.An_obs[j] = df.FluxCO2[j] / footprint #* c.MMOL_2_UMOL / footprint
-    out.E_obs[j] = df.FluxH2O[j] / footprint
+    #out.An_obs[j] = df.FluxCO2[j] / footprint #* c.MMOL_2_UMOL / footprint
+    #out.E_obs[j] = df.FluxH2O[j] / footprint
 
     return out
 
@@ -108,7 +108,7 @@ if __name__ == "__main__":
 
     output_dir = "outputs"
     fpath = "/Users/mingkaijiang/Documents/Research/Projects/WCT1_CO2_drawdown/Two_leaf_model/met_data/"
-    fname = "met_drawdownperiod_ch01.csv"
+    fname = "met_constant_forcing_aCO2.csv"
     fn = os.path.join(fpath, fname)
     df = pd.read_csv(fn)
     #df = df.drop(df.columns[0], axis=1)

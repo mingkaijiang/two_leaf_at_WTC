@@ -42,12 +42,11 @@ Ear = None # 34000.0
 
 # Curvature of the light response.
 # See Peltoniemi et al. 2012 Tree Phys, 32, 510-519
-theta_hyperbol = 0.9995
+#theta_hyperbol = 0.9995
 #theta = 0.85
 
 # Curvature of the light response (-)
-# set to MAESTRA numbers
-theta_J = 0.57
+theta_J = 0.48
 
 quantum_yield = 0.3
 
@@ -58,7 +57,7 @@ absorptance = 1 - refl[0] - tau[0]
 # reflectance and transmittance should change to MAESTRA
 
 #alpha = quantum_yield * absorptance # (Medlyn et al 2002)
-alpha = 0.24
+alpha = 0.243
 # residual stomatal conductance as net assimilation rate reaches zero
 # (mol m-2 s-1)
 g0 = 0.0
@@ -79,7 +78,7 @@ Hdj = 200000.0
 Vcmax25 = 97.00
 
 # potential rate of electron transport at 25 deg or 298 K
-Jmax25 = 139.33
+Jmax25 = 169.0
 
 # Rspiration rate at the reference temperature 25 deg C or 298 K [deg K]
 Rd25 = 1.26

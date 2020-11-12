@@ -11,7 +11,7 @@ import math
 import pandas as pd
 
 import constants as c
-import parameters_eCO2 as p
+import parameters as p
 from radiation import calculate_absorbed_radiation
 from two_leaf import Canopy as TwoLeaf
 
@@ -108,7 +108,7 @@ if __name__ == "__main__":
 
     output_dir = "outputs"
     fpath = "/Users/mingkaijiang/Documents/Research/Projects/WCT1_CO2_drawdown/Two_leaf_model/met_data/"
-    fname = "met_drawdownperiod_ch04.csv"
+    fname = "met_constant_forcing_eCO2.csv"
     fn = os.path.join(fpath, fname)
     df = pd.read_csv(fn)
     #df = df.drop(df.columns[0], axis=1)
