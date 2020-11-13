@@ -46,7 +46,7 @@ Ear = None # 34000.0
 #theta = 0.85
 
 # Curvature of the light response (-)
-theta_J = 0.48
+theta_J = 0.46
 
 quantum_yield = 0.3
 
@@ -57,13 +57,13 @@ absorptance = 1 - refl[0] - tau[0]
 # reflectance and transmittance should change to MAESTRA
 
 #alpha = quantum_yield * absorptance # (Medlyn et al 2002)
-alpha = 0.243
+alpha = 0.295
 # residual stomatal conductance as net assimilation rate reaches zero
 # (mol m-2 s-1)
 g0 = 0.0
 
 # slope of the sensitivity of stomatal conductance to assimilation (mol m-2 s-1)
-g1 = 3.45 
+g1 = 3.41 
 
 # the sensitivity of stomatal conductance to D (kPa)
 D0 = 1.5
@@ -75,10 +75,10 @@ Hdv = 200000.0
 Hdj = 200000.0
 
 # max rate of rubisco activity at 25 deg or 298 K
-Vcmax25 = 97.00
+Vcmax25 = 108.7
 
 # potential rate of electron transport at 25 deg or 298 K
-Jmax25 = 169.0
+Jmax25 = 169.98
 
 # Rspiration rate at the reference temperature 25 deg C or 298 K [deg K]
 Rd25 = 1.26
